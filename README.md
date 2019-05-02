@@ -28,7 +28,7 @@ Configures a domain hosted on Route53 to work with AWS Simple Email Service (SES
 
 ```hcl
 module "ses_domain" {
-  source             = "trussworks/ses-domain/aws"
+  source             = "github.com/7factor/terraform-aws-ses"
   domain_name        = "example.com"
   mail_from_domain   = "email.example.com"
   route53_zone_id    = "${data.aws_route53_zone.SES_domain.zone_id}"
