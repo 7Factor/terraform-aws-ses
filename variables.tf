@@ -24,22 +24,7 @@ variable "mail_from_domain" {
   type        = "string"
 }
 
-variable "receive_s3_bucket" {
-  description = "Name of the S3 bucket to store received emails."
-  type        = "string"
-}
-
-variable "receive_s3_prefix" {
-  description = "The key prefix of the S3 bucket to store received emails."
-  type        = "string"
-}
-
 variable "route53_zone_id" {
   description = "Route53 host zone ID to enable SES."
-  type        = "string"
-}
-
-variable "ses_rule_set" {
-  description = "Name of the SES rule set to associate rules with."
   type        = "string"
 }
