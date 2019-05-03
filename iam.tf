@@ -1,15 +1,15 @@
-resource "aws_iam_user" "SMTP" {
+resource "aws_iam_user" "ses_user" {
   name = "outbound-mail"
   path = "/"
 }
 
-resource "aws_iam_access_key" "SMTP" {
-  user = "${aws_iam_user.SMTP.name}"
+resource "aws_iam_access_key" "ses_access_key" {
+  user = "${aws_iam_user.ses_user.name}"
 }
 
 resource "aws_iam_user_policy" "SMTP_ro" {
   name = "AmazonSesSendingAccess"
-  user = "${aws_iam_user.SMTP.name}"
+  user = "${aws_iam_user.ses_user.name}"
 
   policy = <<EOF
 {
