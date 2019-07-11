@@ -20,7 +20,7 @@ resource "aws_route53_record" "spf_domain" {
   name    = var.domain_name
   type    = "TXT"
   ttl     = "600"
-  records = ["v=spf1 include:amazonses.com -all"]
+  records = var.spf_records
 }
 
 resource "aws_route53_record" "mx_send_mail_from" {
@@ -36,7 +36,7 @@ resource "aws_route53_record" "mx_receive" {
   name    = var.domain_name
   type    = "MX"
   ttl     = "600"
-  records = ["10 inbound-smtp.${data.aws_region.current.name}.amazonaws.com"]
+  records = var.mx_receive_records
 }
 
 resource "aws_route53_record" "txt_dmarc" {
