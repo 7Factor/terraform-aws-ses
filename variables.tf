@@ -32,11 +32,9 @@ variable "route53_zone_id" {
 variable "mx_receive_records" {
   description = "Route53 MX record which defines vaild mail servers."
   type        = list(string)
-  default     = ["10 inbound-smtp.${data.aws_region.current.name}.amazonaws.com"]
 }
 
 variable "spf_records" {
   description = "Route53 MX record which defines vaild mail servers."
   type        = list(string)
-  default     = ["v=spf1 include:amazonses.com -all"]
 }
