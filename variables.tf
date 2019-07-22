@@ -9,7 +9,7 @@ variable "domain_name" {
 }
 
 variable "enable_verification" {
-  description = "Control whether or not to verify SES DNS records."
+  description = "Control whether or not to verify SES DNS records. Defaults to true."
   type        = string
   default     = true
 }
@@ -30,11 +30,12 @@ variable "route53_zone_id" {
 }
 
 variable "mx_receive_records" {
-  description = "Route53 MX record which defines vaild mail servers."
+  description = "Route53 MX record which defines vaild mail servers. Defaults to `10 inbound-smtp.us-east-1.amazonaws.com`."
   type        = list(string)
+  default     = ["10 inbound-smtp.us-east-1.amazonaws.com"]
 }
 
 variable "spf_records" {
-  description = "Route53 MX record which defines vaild mail servers."
+  description = "Route53 MX record which defines vaild mail servers. Defaults to `v=spf1 include:amazonses.com -all`"
   type        = list(string)
 }
