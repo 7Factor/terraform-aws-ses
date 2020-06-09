@@ -1,5 +1,5 @@
 resource "aws_iam_user" "ses_user" {
-  name = "outbound-mail"
+  name = "outbound-mail-for-${var.domain_name}"
   path = "/"
 }
 
