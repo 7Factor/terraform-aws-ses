@@ -7,6 +7,5 @@ describe ses_identity(TFVARS['domain_name']) do
   it { should exist }
   its(:dkim_enabled) { should eq true }
   its(:dkim_verification_status) { should eq 'Success'}
-  its(:verification_status) { should eq 'Success'}
   its(:forwarding_enabled) { should eq true}
 end
