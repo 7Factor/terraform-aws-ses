@@ -9,7 +9,7 @@ output "smtp_user_name" {
 
 output "smtp_user_secret" {
   description = "Password for SMTP user."
-  value       = aws_iam_access_key.ses_access_key.ses_smtp_password
+  value       = aws_iam_access_key.ses_access_key.ses_smtp_password_v4
 }
 
 output "dkim_tokens" {
