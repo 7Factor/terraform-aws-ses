@@ -35,3 +35,7 @@ variable "spf_records" {
   default     = ["v=spf1 include:amazonses.com -all"]
   description = "Route53 MX record which defines vaild mail servers. Defaults to `v=spf1 include:amazonses.com -all`"
 }
+
+variable "ses_rule_set" {
+  description = "The name of the SES rule set."
+}
