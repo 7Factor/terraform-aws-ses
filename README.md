@@ -34,11 +34,6 @@ module "ses_domain" {
   route53_zone_id    = "${data.aws_route53_zone.SES_domain.zone_id}"
   from_addresses     = ["email1@example.com", "email2@example.com"]
   dmarc_rua          = "something@example.com"
-  ses_rule_set       = "name-of-the-ruleset"
-}
-
-resource "aws_ses_receipt_rule_set" "name-of-the-ruleset" {
-  rule_set_name = "name-of-the-ruleset"
 }
 
 data "aws_route53_zone" "SES_domain" {
@@ -57,4 +52,3 @@ data "aws_route53_zone" "SES_domain" {
 | from_addresses | List of email addresses to catch bounces and rejections | list | - | yes |
 | mail_from_domain | Subdomain (of the route53 zone) which is to be used as MAIL FROM address | string | - | yes |
 | route53_zone_id | Route53 host zone ID to enable SES. | string | - | yes |
-| ses_rule_set | Name of the SES rule set to associate rules with. | string | - | yes |
