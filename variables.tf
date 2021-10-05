@@ -3,21 +3,12 @@ variable "dmarc_rua" {
 }
 
 variable "domain_name" {
-  description = "The domain name to configure SES."
+  description = "The domain name to configure SES. Must be a top level, FQDN."
 }
 
 variable "enable_verification" {
   default     = true
   description = "Control whether or not to verify SES DNS records. Defaults to true."
-}
-
-variable "from_addresses" {
-  type        = list(string)
-  description = "List of email addresses to catch bounces and rejections"
-}
-
-variable "mail_from_domain" {
-  description = " Subdomain (of the route53 zone) which is to be used as MAIL FROM address"
 }
 
 variable "route53_zone_id" {

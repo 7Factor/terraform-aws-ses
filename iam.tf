@@ -1,5 +1,5 @@
 resource "aws_iam_user" "ses_user" {
-  name = "outbound-mail-for-${var.domain_name}"
+  name = "outbound-mail-for-${replace(var.domain_name, ".", "-")}"
   path = "/"
 }
 
@@ -7,7 +7,7 @@ resource "aws_iam_access_key" "ses_access_key" {
   user = aws_iam_user.ses_user.name
 }
 
-resource "aws_iam_user_policy" "SMTP_ro" {
+resource "aws_iam_user_policy" "smtp_read_only" {
   name = "AmazonSesSendingAccess"
   user = aws_iam_user.ses_user.name
 
