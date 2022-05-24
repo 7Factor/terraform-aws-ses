@@ -25,3 +25,9 @@ variable "spf_records" {
   default     = ["v=spf1 include:amazonses.com -all"]
   description = "Route53 MX record which defines valid mail servers. Defaults to `v=spf1 include:amazonses.com -all`"
 }
+
+variable "mail_from_mx_records" {
+  type        = list(string)
+  default     = ["10 feedback-smtp.us-east-1.amazonses.com"]
+  description = "Route53 MX record which validates custom mail from subdomain. Defaults to `10 feedback-smtp.us-east-1.amazonses.com`."
+}
