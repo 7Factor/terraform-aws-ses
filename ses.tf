@@ -18,5 +18,5 @@ resource "aws_ses_domain_dkim" "dkim" {
 # support later if necessary. It would simply be a loop on the verification/mail_from pair.
 resource "aws_ses_domain_mail_from" "mail_from" {
   domain           = aws_ses_domain_identity.domain_id.domain
-  mail_from_domain = var.mail_from_subdomain
+  mail_from_domain = "bounce.${aws_ses_domain_identity.domain_id.domain}"
 }
