@@ -6,10 +6,6 @@ variable "domain_name" {
   description = "The domain name to configure SES. Must be a top level, FQDN."
 }
 
-variable "mail_from_subdomain" {
-  description = "The sub domain from where to send emails. Must be a valid subdomain of domain_name."
-}
-
 variable "route53_zone_id" {
   description = "Route53 host zone ID to enable SES."
 }
