@@ -38,6 +38,8 @@ endeavour to use the registry as the source for this module. It is also **highly
 projects to the new source at your earliest convenience. Using it in this way, you can select a range of versions to use
 in your service which allows us to make potentially breaking changes to the module without breaking your service.
 
+For new versions of this module, make sure to commit changes to the **main** branch, and not 'master'. The 'master' branch is deprecated and maintained for backwards compatibility as it was the first version of this module before we registered it in Terraform. That way we prevent other teams from having to update the version number on their existing pipelines. But moving forward, please use **main**.
+
 ### Migration instructions
 
 You need to change the module source from the GitHub url to `7Factor/ses/aws`. This will pull the module from
