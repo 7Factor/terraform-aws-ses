@@ -1,6 +1,6 @@
 # AWS SES Configuration via Terraform
 
-This repo contains all the terraform for creating an SES user and DNS records (MX, SPF, DMARC).
+This repo contains all the terraform for creating an SES user and domain identity. Creation of the DKIM, MX, SPF, and DMARC DNS records for SES is out of scope for this module and is assumed to be handled elsewhere in your infrastructure. You can look at the 7F-aws-infrastructure repository to see how those are created.
 
 ## How to Use This
 
@@ -37,6 +37,8 @@ We have migrated this module to the
 endeavour to use the registry as the source for this module. It is also **highly recommended** that you migrate existing
 projects to the new source at your earliest convenience. Using it in this way, you can select a range of versions to use
 in your service which allows us to make potentially breaking changes to the module without breaking your service.
+
+For new versions of this module, make sure to commit changes to the **main** branch, and not 'master'. The 'master' branch is deprecated and maintained for backwards compatibility as it was the first version of this module before we registered it in Terraform. That way we prevent other teams from having to update the version number on their existing pipelines. But moving forward, please use **main**.
 
 ### Migration instructions
 
