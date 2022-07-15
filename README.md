@@ -24,7 +24,6 @@ module "networking" {
   source  = "7Factor/ses/aws"
   version = "~> 1"
 
-  dmarc_email   = "youremail@7factor.io"
   domain_name   = "domain.com"
   route53_zone_id = "Z1PSM7MU3C2H4Z"
 }
