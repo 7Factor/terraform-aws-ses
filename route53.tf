@@ -9,7 +9,7 @@ resource "aws_route53_record" "dkim" {
 
 resource "aws_route53_record" "spf_records" {
   zone_id = var.route53_zone_id
-  name    = aws_ses_domain_mail_from.mail_from.mail_from_domain
+  name    = var.domain_name
   type    = "TXT"
   ttl     = "600"
   records = var.spf_records
@@ -17,7 +17,7 @@ resource "aws_route53_record" "spf_records" {
 
 resource "aws_route53_record" "mx_records" {
   zone_id = var.route53_zone_id
-  name    = aws_ses_domain_mail_from.mail_from.mail_from_domain
+  name    = var.domain_name
   type    = "MX"
   ttl     = "600"
   records = var.mx_records
