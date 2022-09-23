@@ -11,8 +11,16 @@ Please note we have a code of conduct, please follow it in all your interactions
    build. There should be ignore files in place to ensure you need not worry about this.
 2. Update the README.md with details of changes to the interface, this includes new environment
    variables, exposed ports, useful file locations and container parameters.
-3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
+3. Apply one of the following labels to the PR to indicate what type of release it should create. We use
+   [Semantic Versioning](https://semver.org/) as is standard for terraform modules.
+    * https://github.com/7Factor/terraform-aws-ses/labels/release%3Amajor -
+      A release for a major version will be created after merging the PR.
+    * https://github.com/7Factor/terraform-aws-ses/labels/release%3Aminor -
+      A release for a minor version will be created after merging the PR.
+    * https://github.com/7Factor/terraform-aws-ses/labels/release%3Apatch -
+      A release for a patch version will be created after merging the PR.
+    * https://github.com/7Factor/terraform-aws-ses/labels/no%20release -
+      No release will be created after merging the PR.
 4. PR's require at least one approving review from a maintainer. If approved, a maintainer will merge your PR.
 
 ## Code of Conduct
